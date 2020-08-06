@@ -1,5 +1,12 @@
 <?php
 
+//======================================================================
+// Made by Uhtoom
+// https://github.com/uhtoom/StupidHarpTab
+// Fully open source and free, I take no responibility at all.
+//======================================================================
+
+
 function StupidHarpTab($file){ // Main function, gets the file, spits it and sends it on its way
   $myfile = fopen($file, "r") or die("Unable to open file!"); //open the file
 
