@@ -1,0 +1,56 @@
+.rad {
+ width:100%; clear:both; margin-bottom: 2em;
+  }
+
+
+.not {
+    float: left;
+  }
+
+.tab {
+    float:left;width:2em; max-width:2em;text-align:center;
+  }
+
+.forth {
+
+    width:0.8em;
+    margin-right:0.2em;
+    height:1em;
+    margin-left:calc(1em - 1px);
+    border-left: 1px solid #000;
+  }
+
+.eighth {
+    width:0.8em;
+    margin-right:0.2em;
+    height:1em;
+    margin-left:calc(1em - 1px);
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+  }
+
+.sixteenth {
+    width:0.8em;
+    margin-right:0.2em;
+    height:1em;
+    margin-left:calc(1em - 1px);
+    border-left: 1px solid #000;
+    border-top: 3px double #000;
+  }
+
+
+.half {
+    width:calc(0.8em - 2px);
+    margin-right:0.2em;
+    height:1em;
+    margin-left:calc(1em - 1px);
+    border-left: 3px double #000;
+  }
+
+.full {
+    width:calc(0.8em - 2px);
+    margin-right:0.2em;
+    height:1em;
+    margin-left:calc(1em - 1px);
+    border-left: 3px solid #000;
+  }
