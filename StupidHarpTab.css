@@ -1,3 +1,9 @@
+.title {
+  float:left;
+  clear: both;
+  margin: 1em;
+}
+
 .rad {
  width:100%; clear:both; margin-bottom: 2em;
   }

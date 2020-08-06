@@ -5,20 +5,23 @@ function StupidHarpTab($file){ // Main function, gets the file, spits it and sen
 
     while(!feof($myfile)) { //go throu the file until end
         $line = fgets($myfile); // read a line
-
-        $lineArr = explode(" ", trim($line)); // explode the line at blank space and trim trailing \n added by fgets
-
-        parseTab($lineArr); // send the array to the parser
+        if(substr( $line, 0, 1 ) == "#"){ //if line begins with # print it
+            $line = substr($line, 1);
+            echo "<div class='title'>" . $line . "</div>";
+          }else{
+          $lineArr = explode(" ", trim($line)); // explode the line at blank space and trim trailing \n added by fgets
+          parseTab($lineArr); // send the array to the parser
+        } // end else
       } //end while loop
       fclose($myfile); // Close the file
 } // end StupidHarpTab()
 
 
-function parseTab(array $score){
+function parseTab(array $score){ //function to get everything in right order and echo som divs
   echo "<div class='rad'>";
-  genScore($score);
+  genScore($score); // get the score
   echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>";
-  genTab($score);
+  genTab($score); // get the tabs
   echo "</div>";
 } //end parseTab
 
