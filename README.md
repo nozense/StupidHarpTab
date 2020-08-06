@@ -1,11 +1,12 @@
 # StupidHarpTab
-Just a stupid Harmonica tab parser
+
+Just a stupid (i.e not sane, beautiful or efficient) parser for simple tab files using a sligthly alterd tab format.
 
 ## Purpose
 
-To add easily understandable characters to indicate note length in tabs,
-without making the raw tabs hard to follow,
-and to draw these out using simple php and css.
+To be able to add note length to tabs without making them harder to read,
+but be able to draw these out with easily understandable characters.
+Parsed with php and css to make it easy, lightweight and customizable.
 
 ## Tab syntax
 
@@ -15,7 +16,7 @@ Four Blow | 4
 Four Draw | (4)
 Sixteeth note (preceding :) | :4
 Eighth note (preceding .)| .4
-Quater note (i.e no marking) | 4
+Quater note (no marking) | 4
 Half note (trailing .)| 4.
 Full note (trailing :)| 4:
 
