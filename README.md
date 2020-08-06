@@ -13,15 +13,16 @@ Explanation | Notation
  ------------ | -------------
 Four Blow | 4
 Four Draw | (4)
-Sixteeth note | :4
-Eighth note | .4
+Sixteeth note (preceding :) | :4
+Eighth note (preceding .)| .4
 Quater note (i.e no marking) | 4
-Half note | 4.
-Full note | 4:
+Half note (trailing .)| 4.
+Full note (trailing :)| 4:
 
 
 ## Files
 
 * StupidHarpTab.php - Main functions
 * StupidHarpTab.css - Needed css for musical Notation
+* scarburogh.txt - Example tab file
 * test.php - Test and demo
