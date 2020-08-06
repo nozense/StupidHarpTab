@@ -1,25 +1,23 @@
 <?php
 
-function StupidHarpTab($file){
+function StupidHarpTab($file){ // Main function, gets the file, spits it and sends it on its way
+$myfile = fopen($file, "r") or die("Unable to open file!"); //open the file
 
-$myfile = fopen($file, "r") or die("Unable to open file!");
-// Output one line until end-of-file
-while(!feof($myfile)) {
-$line = fgets($myfile);
+while(!feof($myfile)) { //go throu the file until end
+$line = fgets($myfile); // read a line
 
 echo "<br /> Raden: " . $line . "<br />"; //debug
 
-$lineArr = explode(" ", $line);
+$lineArr = explode(" ", $line); // explode the line at blank space
 
 echo "<br />";        //debug
 var_dump($lineArr);   //debug
 echo "<br />";       //debug
 
-parseTab($lineArr);
+parseTab($lineArr); // send the array to the parser
 }
-fclose($myfile);
-
-}
+fclose($myfile); // Close the file
+} // end StupidHarpTab()
 
 
 function parseTab(array $score){
