@@ -8,6 +8,12 @@ To be able to add note length to tabs without making them harder to read,
 but be able to draw these out with easily understandable characters.
 Parsed with php and css to make it easy, lightweight and customizable.
 
+## Limitations (or TODO)
+
+* No escaping or sanitation of input AT ALL
+* No expressions - like strength, thrill, slide etc.
+
+
 ## Tab/file syntax
 
 Explanation | Notation
@@ -27,5 +33,5 @@ Header/Title (# as first char) | # Title
 
 * StupidHarpTab.php - Main functions
 * StupidHarpTab.css - Needed css for musical Notation
-* scarburogh.txt - Example tab file
+* scarborough.txt - Example tab file
 * test.php - Test and demo

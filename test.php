@@ -18,7 +18,7 @@ include 'StupidHarpTab.php';
 
 
 <?php
-StupidHarpTab("scarburogh.txt");
+StupidHarpTab("scarborough.txt");
 ?>
 
 
