@@ -1,31 +1,31 @@
 <?php
 
 function StupidHarpTab($file){ // Main function, gets the file, spits it and sends it on its way
-$myfile = fopen($file, "r") or die("Unable to open file!"); //open the file
+  $myfile = fopen($file, "r") or die("Unable to open file!"); //open the file
 
-while(!feof($myfile)) { //go throu the file until end
-$line = fgets($myfile); // read a line
+    while(!feof($myfile)) { //go throu the file until end
+        $line = fgets($myfile); // read a line
 
-echo "<br /> Raden: " . $line . "<br />"; //debug
+        echo "<br /> Raden: " . $line . "<br />"; //debug
 
-$lineArr = explode(" ", $line); // explode the line at blank space
+        $lineArr = explode(" ", $line); // explode the line at blank space
 
 echo "<br />";        //debug
 var_dump($lineArr);   //debug
 echo "<br />";       //debug
 
-parseTab($lineArr); // send the array to the parser
-}
-fclose($myfile); // Close the file
+        parseTab($lineArr); // send the array to the parser
+      } //end while loop
+      fclose($myfile); // Close the file
 } // end StupidHarpTab()
 
 
 function parseTab(array $score){
-echo "<div class='rad'>";
-genScore($score);
-echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>";
-genTab($score);
-echo "</div>";
+  echo "<div class='rad'>";
+  genScore($score);
+  echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>";
+  genTab($score);
+  echo "</div>";
 } //end parseTab
 
 
@@ -63,7 +63,7 @@ if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
 
 
 
-function getNot($length,$dot){
+function getNot($length,$dot){ //generate div with right class for diffrent length 
 switch($length)
 {
     case "1":
