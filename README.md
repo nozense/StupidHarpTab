@@ -9,7 +9,7 @@ and to draw these out using simple php and css.
 
 ## Tab syntax
 
-Notation | Explanation
+Explanation | Notation
  ------------ | -------------
 Four Blow | 4
 Four Draw | (4)

@@ -6,7 +6,7 @@ function StupidHarpTab($file){ // Main function, gets the file, spits it and sen
     while(!feof($myfile)) { //go throu the file until end
         $line = fgets($myfile); // read a line
 
-        $lineArr = explode(" ", $line); // explode the line at blank space
+        $lineArr = explode(" ", trim($line)); // explode the line at blank space and trim trailing \n added by fgets
 
         parseTab($lineArr); // send the array to the parser
       } //end while loop
@@ -40,7 +40,6 @@ echo "</div>";
 
 function genScore(array $score){ //resive score as array of expressions like "(4)."
   foreach ($score as $singleNot) { // go through expressions
-    $singleNot = trim($singleNot);
 if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
     if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0);}
     elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0);}
