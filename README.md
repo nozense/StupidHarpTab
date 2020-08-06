@@ -11,13 +11,13 @@ and to draw these out using simple php and css.
 
 Notation | Explanation
  ------------ | -------------
-"4"   | Four Blow
-"(4)" | Four Draw
-":4" | Sixteeth note
-".4" | Eighth note
-"4" | Quater note (i.e no marking)
-"4." | Half note
-"4:" | Full note
+Four Blow | 4
+Four Draw | (4)
+Sixteeth note | :4
+Eighth note | .4
+Quater note (i.e no marking) | 4
+Half note | 4.
+Full note | 4:
 
 
 ## Files
