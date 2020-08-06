@@ -6,13 +6,7 @@ function StupidHarpTab($file){ // Main function, gets the file, spits it and sen
     while(!feof($myfile)) { //go throu the file until end
         $line = fgets($myfile); // read a line
 
-        echo "<br /> Raden: " . $line . "<br />"; //debug
-
         $lineArr = explode(" ", $line); // explode the line at blank space
-
-echo "<br />";        //debug
-var_dump($lineArr);   //debug
-echo "<br />";       //debug
 
         parseTab($lineArr); // send the array to the parser
       } //end while loop
@@ -46,7 +40,7 @@ echo "</div>";
 
 function genScore(array $score){ //resive score as array of expressions like "(4)."
   foreach ($score as $singleNot) { // go through expressions
-
+    $singleNot = trim($singleNot);
 if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
     if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0);}
     elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0);}
@@ -63,7 +57,7 @@ if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
 
 
 
-function getNot($length,$dot){ //generate div with right class for diffrent length 
+function getNot($length,$dot){ //generate div with right class for diffrent length
 switch($length)
 {
     case "1":
