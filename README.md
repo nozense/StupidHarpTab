@@ -12,6 +12,7 @@ Parsed with php and css to make it easy, lightweight and customizable.
 
 * No escaping or sanitation of input AT ALL
 * No expressions - like strength, thrill, slide etc.
+* Due to DIV behaviour, line length is locked at 40em - meaning no more than 20 tab signs per line. (you can easily change this.)
 
 
 ## Tab/file syntax
