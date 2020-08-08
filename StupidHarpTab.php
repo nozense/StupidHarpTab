@@ -3,7 +3,7 @@
 //======================================================================
 // Made by Uhtoom
 // https://github.com/uhtoom/StupidHarpTab
-// Fully open source and free, I take no responibility at all.
+// Released under GNU General Public License v3.0
 //======================================================================
 
 
