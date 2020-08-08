@@ -2,17 +2,12 @@
 
 <?php
 include 'StupidHarpTab.php';
-
-
  ?>
-
-
 
 <head>
   <link rel="stylesheet" type="text/css" href="StupidHarpTab.css">
-
 </head>
-  <body>
+<body>
 
 
 
@@ -21,5 +16,4 @@ include 'StupidHarpTab.php';
 StupidHarpTab("scarborough.txt");
 ?>
 
-
-    </body>
+</body>
