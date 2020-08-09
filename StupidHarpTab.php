@@ -50,41 +50,29 @@ echo "</div>";
 
 function genScore(array $score, $style){ //resive score as array of expressions like "(4)."
 
-  if($style == "div"){ //if div
     foreach ($score as $singleNot) { // go through expressions
-      if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
-        if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0);}
-          elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0);}
-          elseif(substr( $singleNot, 0, 1 ) == "."){ getNot(8,0); }
-          elseif(substr( $singleNot, 0, 1 ) == ":"){ getNot(16,0); }
-        }else{
-          if(substr( $singleNot, -1 ) == "."){getNot(2,0);}
-          elseif(substr( $singleNot, -1 ) == ":"){getNot(1,0);}
+      if(substr( $singleNot, 0, 1 ) == "r"){getNot("r",0,$style);}    // If we have "r" generate rest
+          elseif(substr( $singleNot, 0, 1 ) == "R"){getNot("R",0,$style);}else{ // if we have "R" generate rest, if no rests continue
+      if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){ //if last sign is ")" or numeric
+        if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0,$style);} //if first sign is "(" then both first and last is () thus a 4 note
+          elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0,$style);} // if first is numeric then both first and last is numeric, thus 4 note
+          elseif(substr( $singleNot, 0, 1 ) == "."){ getNot(8,0,$style); } // if dot infront its 8th
+          elseif(substr( $singleNot, 0, 1 ) == ":"){ getNot(16,0,$style); } // if ":" in front then its 16th
+        }else{ //if last sign isnt numeric or ")" it must be a longer note
+          if(substr( $singleNot, -1 ) == "."){getNot(2,0,$style);} // if last sign is "." its a halfnote
+          elseif(substr( $singleNot, -1 ) == ":"){getNot(1,0,$style);} // if last sign is a ":" its a fullnote
         } //end esle
+      }//end else from rests
       } //en forech $score
-    }//end style if
-
-  elseif($style == "unicode"){ //if unicode
-    foreach ($score as $singleNot) { // go through expressions
-      if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
-        if(substr( $singleNot, 0, 1 ) == "("){getNotU(4,0);}
-          elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNotU(4,0);}
-          elseif(substr( $singleNot, 0, 1 ) == "."){ getNotU(8,0); }
-          elseif(substr( $singleNot, 0, 1 ) == ":"){ getNotU(16,0); }
-        }else{
-          if(substr( $singleNot, -1 ) == "."){getNotU(2,0);}
-          elseif(substr( $singleNot, -1 ) == ":"){getNotU(1,0);}
-        } //end esle
-      } //en forech $score
-    }//end style if
 
 } //end genScore
 
 
 
-function getNot($length,$dot){ //generate div with right class for diffrent length
-switch($length)
-{
+function getNot($length,$dot,$style){ //generate div with right class for diffrent length
+if($style=="div"){
+  switch($length)
+  {
     case "1":
     echo "<div class='not full' >";
       if($dot == "1"){echo "&nbsp;<b>.</b>";}
@@ -115,15 +103,27 @@ switch($length)
     echo "</div>";
     break;
 
+    case "r":
+    echo "<div class='not eighth' >";
+      echo "<b>R</b>";
+      if($dot == "1"){echo "&nbsp;<b>.</b>";}
+    echo "</div>";
+    break;
+
+    case "R":
+    echo "<div class='not forth' >";
+      echo "<b>R</b>";
+      if($dot == "1"){echo "&nbsp;<b>.</b>";}
+    echo "</div>";
+    break;
+
     case "": // Handle file extension for files ending in '.'
     case NULL: // Handle no file extension
     break;
-  } //slut switch
-} //slut getNot
-
-function getNotU($length,$dot){ //generate div and incert unicode
-switch($length)
-{
+    } //slut switch
+}elseif($style == "unicode"){
+  switch($length)
+  {
     case "1":
     echo "<div class='not unicodeN' >";
       echo "&#x1d15D;";
@@ -154,10 +154,23 @@ switch($length)
     echo "</div>";
     break;
 
+    case "r":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d13E;";
+    echo "</div>";
+    break;
+
+    case "R":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d13D;";
+    echo "</div>";
+    break;
+
     case "": // Handle file extension for files ending in '.'
     case NULL: // Handle no file extension
     break;
   } //slut switch
+}//end elseif
 } //slut getNot
 
 

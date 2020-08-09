@@ -21,6 +21,8 @@ StupidHarpTab(FILE, STYLE);
 FILE is the file with one or more tabs
 STYLE is "div" for a div/border based parsing and "unicode" to use unicode symbols.
 
+Note that one file can contain several TABs.
+
 ## Tab/file syntax
 
 Explanation | Notation
@@ -32,6 +34,8 @@ Eighth note (preceding .)| .4
 Quater note (no marking) | 4
 Half note (trailing .)| 4.
 Full note (trailing :)| 4:
+Eighth note Rest (lower case r) | r
+Quater note Rest (upper case R) | R
 Header/Title (# as first char) | # Title
 
 
