@@ -13,6 +13,12 @@
     float: left;
   }
 
+.unicodeN {
+  height:1em;
+  width: 2em;
+  text-align: center;
+}
+
 .tab {
     float:left;width:2em; max-width:2em;text-align:center;
   }

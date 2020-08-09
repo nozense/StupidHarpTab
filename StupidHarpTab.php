@@ -7,7 +7,7 @@
 //======================================================================
 
 
-function StupidHarpTab($file){ // Main function, gets the file, spits it and sends it on its way
+function StupidHarpTab($file, $style){ // Main function, gets the file, spits it and sends it on its way
   $myfile = fopen($file, "r") or die("Unable to open file!"); //open the file
 
     while(!feof($myfile)) { //go throu the file until end
@@ -17,16 +17,16 @@ function StupidHarpTab($file){ // Main function, gets the file, spits it and sen
             echo "<div class='title'>" . $line . "</div>";
           }else{
           $lineArr = explode(" ", trim($line)); // explode the line at blank space and trim trailing \n added by fgets
-          parseTab($lineArr); // send the array to the parser
+          parseTab($lineArr, $style); // send the array to the parser
         } // end else
       } //end while loop
       fclose($myfile); // Close the file
 } // end StupidHarpTab()
 
 
-function parseTab(array $score){ //function to get everything in right order and echo som divs
+function parseTab(array $score, $style){ //function to get everything in right order and echo som divs
   echo "<div class='rad'>";
-  genScore($score); // get the score
+  genScore($score, $style); // get the score
   echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>";
   genTab($score); // get the tabs
   echo "</div>";
@@ -48,19 +48,34 @@ echo "</div>";
 } //end genTab
 
 
-function genScore(array $score){ //resive score as array of expressions like "(4)."
-  foreach ($score as $singleNot) { // go through expressions
-if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
-    if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0);}
-    elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0);}
-    elseif(substr( $singleNot, 0, 1 ) == "."){ getNot(8,0); }
-    elseif(substr( $singleNot, 0, 1 ) == ":"){ getNot(16,0); }
-}else{
-    if(substr( $singleNot, -1 ) == "."){getNot(2,0);}
-    elseif(substr( $singleNot, -1 ) == ":"){getNot(1,0);}
-}
-
-  } //en forech $score
+function genScore(array $score, $style){ //resive score as array of expressions like "(4)."
+  if($style == "div"){
+    foreach ($score as $singleNot) { // go through expressions
+      if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
+        if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0);}
+          elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0);}
+          elseif(substr( $singleNot, 0, 1 ) == "."){ getNot(8,0); }
+          elseif(substr( $singleNot, 0, 1 ) == ":"){ getNot(16,0); }
+        }else{
+          if(substr( $singleNot, -1 ) == "."){getNot(2,0);}
+          elseif(substr( $singleNot, -1 ) == ":"){getNot(1,0);}
+        } //end esle
+      } //en forech $score
+    }//end style if
+  elseif{$style == "unicode"}{
+    foreach ($score as $singleNot) { // go through expressions
+      if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
+        if(substr( $singleNot, 0, 1 ) == "("){getNotU(4,0);}
+          elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNotU(4,0);}
+          elseif(substr( $singleNot, 0, 1 ) == "."){ getNotU(8,0); }
+          elseif(substr( $singleNot, 0, 1 ) == ":"){ getNotU(16,0); }
+        }else{
+          if(substr( $singleNot, -1 ) == "."){getNotU(2,0);}
+          elseif(substr( $singleNot, -1 ) == ":"){getNotU(1,0);}
+        } //end esle
+      } //en forech $score
+    }//end style if
+  }
 
 } //end genScore
 
@@ -99,14 +114,50 @@ switch($length)
     echo "</div>";
     break;
 
-
-
     case "": // Handle file extension for files ending in '.'
     case NULL: // Handle no file extension
     break;
   } //slut switch
 } //slut getNot
 
+function getNotU($length,$dot){ //generate div with right class for diffrent length
+switch($length)
+{
+    case "1":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d15D;";
+    echo "</div>";
+    break;
+
+    case "2":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d15E;";
+    echo "</div>";
+    break;
+
+    case "4":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d15F;";
+    echo "</div>";
+    break;
+
+    case "8":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d160;";
+    echo "</div>";
+    break;
+
+    case "16":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d161;";
+    echo "</div>";
+    break;
+
+    case "": // Handle file extension for files ending in '.'
+    case NULL: // Handle no file extension
+    break;
+  } //slut switch
+} //slut getNot
 
 
  ?>

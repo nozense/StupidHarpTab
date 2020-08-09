@@ -13,7 +13,7 @@ include 'StupidHarpTab.php';
 
 
 <?php
-StupidHarpTab("scarborough.txt");
+StupidHarpTab("scarborough.txt", "unicode");
 ?>
 
 </body>
