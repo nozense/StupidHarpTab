@@ -36,6 +36,8 @@ Half note (trailing .)| 4.
 Full note (trailing :)| 4:
 Eighth note Rest (lower case r) | r
 Quater note Rest (upper case R) | R
+Repeat - Start (upper case D) | D
+Repeat - End (lower case d) | d
 Header/Title (# as first char) | # Title
 
 

@@ -40,7 +40,8 @@ function genTab(array $score){
      foreach ($singleChar as $char) { // go through every single character
           if($char == "(" || $char == ")"){echo $char;} //write out parantheses
           if(is_numeric($char)){echo $char;} //write out number
-
+          if($char == "r" || $char == "R"){echo "&nbsp;";} //echo empty for rests
+          if($char == "d" || $char == "D"){echo "&nbsp;";} //echo empty for repeat
         } //end foreach $singleNot
 echo "</div>";
   } //en forech $score
@@ -52,7 +53,10 @@ function genScore(array $score, $style){ //resive score as array of expressions 
 
     foreach ($score as $singleNot) { // go through expressions
       if(substr( $singleNot, 0, 1 ) == "r"){getNot("r",0,$style);}    // If we have "r" generate rest
-          elseif(substr( $singleNot, 0, 1 ) == "R"){getNot("R",0,$style);}else{ // if we have "R" generate rest, if no rests continue
+          elseif(substr( $singleNot, 0, 1 ) == "R"){getNot("R",0,$style);}
+          elseif(substr( $singleNot, 0, 1 ) == "d" ){getNot("d",0,$style);}
+          elseif(substr( $singleNot, 0, 1 ) == "D" ){getNot("D",0,$style);}
+          else{ // if we have "R" generate rest, if no rests continue
       if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){ //if last sign is ")" or numeric
         if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0,$style);} //if first sign is "(" then both first and last is () thus a 4 note
           elseif(is_numeric(substr( $singleNot, 0, 1 ))){getNot(4,0,$style);} // if first is numeric then both first and last is numeric, thus 4 note
@@ -117,6 +121,21 @@ if($style=="div"){
     echo "</div>";
     break;
 
+    case "d":
+    echo "<div class='not empty' >";
+      echo "<b>:|</b>";
+      if($dot == "1"){echo "&nbsp;<b>.</b>";}
+    echo "</div>";
+    break;
+
+    case "D":
+    echo "<div class='not empty' >";
+      echo "<b>|:</b>";
+      if($dot == "1"){echo "&nbsp;<b>.</b>";}
+    echo "</div>";
+    break;
+
+
     case "": // Handle file extension for files ending in '.'
     case NULL: // Handle no file extension
     break;
@@ -165,6 +184,20 @@ if($style=="div"){
       echo "&#x1d13D;";
     echo "</div>";
     break;
+
+
+    case "d":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d107;";
+    echo "</div>";
+    break;
+
+    case "D":
+    echo "<div class='not unicodeN' >";
+      echo "&#x1d106;";
+    echo "</div>";
+    break;
+
 
     case "": // Handle file extension for files ending in '.'
     case NULL: // Handle no file extension
