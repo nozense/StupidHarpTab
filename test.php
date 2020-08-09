@@ -2,24 +2,20 @@
 
 <?php
 include 'StupidHarpTab.php';
-
-
  ?>
-
-
 
 <head>
   <link rel="stylesheet" type="text/css" href="StupidHarpTab.css">
-
 </head>
-  <body>
-
+<body>
 
 
 
 <?php
-StupidHarpTab("scarborough.txt");
+StupidHarpTab("scarborough.txt", "div");
+?>
+<?php
+StupidHarpTab("scarborough.txt", "unicode");
 ?>
 
-
-    </body>
+</body>
