@@ -14,6 +14,12 @@ Parsed with php and css to make it easy, lightweight and customizable.
 * No expressions - like strength, thrill, slide etc.
 * Due to DIV behaviour, line length is locked at 40em - meaning no more than 20 tab signs per line. (you can easily change this.)
 
+## Usage
+
+StupidHarpTab(FILE, STYLE);
+
+FILE is the file with one or more tabs
+STYLE is "div" for a div/border based parsing and "unicode" to use unicode symbols.
 
 ## Tab/file syntax
 

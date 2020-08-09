@@ -49,7 +49,8 @@ echo "</div>";
 
 
 function genScore(array $score, $style){ //resive score as array of expressions like "(4)."
-  if($style == "div"){
+
+  if($style == "div"){ //if div
     foreach ($score as $singleNot) { // go through expressions
       if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
         if(substr( $singleNot, 0, 1 ) == "("){getNot(4,0);}
@@ -62,7 +63,8 @@ function genScore(array $score, $style){ //resive score as array of expressions 
         } //end esle
       } //en forech $score
     }//end style if
-  elseif{$style == "unicode"}{
+
+  elseif($style == "unicode"){ //if unicode
     foreach ($score as $singleNot) { // go through expressions
       if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){
         if(substr( $singleNot, 0, 1 ) == "("){getNotU(4,0);}
@@ -75,7 +77,6 @@ function genScore(array $score, $style){ //resive score as array of expressions 
         } //end esle
       } //en forech $score
     }//end style if
-  }
 
 } //end genScore
 
@@ -120,7 +121,7 @@ switch($length)
   } //slut switch
 } //slut getNot
 
-function getNotU($length,$dot){ //generate div with right class for diffrent length
+function getNotU($length,$dot){ //generate div and incert unicode
 switch($length)
 {
     case "1":

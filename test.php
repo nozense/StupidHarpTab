@@ -11,7 +11,9 @@ include 'StupidHarpTab.php';
 
 
 
-
+<?php
+StupidHarpTab("scarborough.txt", "div");
+?>
 <?php
 StupidHarpTab("scarborough.txt", "unicode");
 ?>
