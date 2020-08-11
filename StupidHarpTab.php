@@ -14,7 +14,7 @@ function StupidHarpTab($file, $style){ // Main function, gets the file, spits it
         $line = fgets($myfile); // read a line
         if(substr( $line, 0, 1 ) == "#"){ //if line begins with # print it
             $line = substr($line, 1);
-            echo "<div class='title'>" . $line . "</div>";
+            echo "<div class='title'>" . $line . "</div>"; //Set class and echos Title
           }else{
           $lineArr = explode(" ", trim($line)); // explode the line at blank space and trim trailing \n added by fgets
           parseTab($lineArr, $style); // send the array to the parser
@@ -27,7 +27,7 @@ function StupidHarpTab($file, $style){ // Main function, gets the file, spits it
 function parseTab(array $score, $style){ //function to get everything in right order and echo som divs
   echo "<div class='rad'>";
   genScore($score, $style); // get the score
-  echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>";
+  echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>"; // echo seperation between score and tab
   genTab($score); // get the tabs
   echo "</div>";
 } //end parseTab
@@ -44,7 +44,7 @@ function genTab(array $score){
           if($char == "d" || $char == "D"){echo "&nbsp;";} //echo empty for repeat
         } //end foreach $singleNot
 echo "</div>";
-  } //en forech $score
+} //end forech $score
 
 } //end genTab
 
@@ -54,7 +54,7 @@ function genScore(array $score, $style){ //resive score as array of expressions 
     foreach ($score as $singleNot) { // go through expressions
       if(substr( $singleNot, 0, 1 ) == "r"){getNot("r",0,$style);}    // If we have "r" generate rest
           elseif(substr( $singleNot, 0, 1 ) == "R"){getNot("R",0,$style);}
-          elseif(substr( $singleNot, 0, 1 ) == "d" ){getNot("d",0,$style);}
+          elseif(substr( $singleNot, 0, 1 ) == "d" ){getNot("d",0,$style);}  // If we have "d" generate repeat
           elseif(substr( $singleNot, 0, 1 ) == "D" ){getNot("D",0,$style);}
           else{ // if we have "R" generate rest, if no rests continue
       if(substr( $singleNot, -1 ) == ")" || is_numeric(substr( $singleNot, -1 )) ){ //if last sign is ")" or numeric
@@ -67,7 +67,7 @@ function genScore(array $score, $style){ //resive score as array of expressions 
           elseif(substr( $singleNot, -1 ) == ":"){getNot(1,0,$style);} // if last sign is a ":" its a fullnote
         } //end esle
       }//end else from rests
-      } //en forech $score
+    } //end forech $score
 
 } //end genScore
 
@@ -136,11 +136,11 @@ if($style=="div"){
     break;
 
 
-    case "": // Handle file extension for files ending in '.'
-    case NULL: // Handle no file extension
+    case "":
+    case NULL:
     break;
-    } //slut switch
-}elseif($style == "unicode"){
+  } //end switch
+}elseif($style == "unicode"){ //if style is unicode echo the right character
   switch($length)
   {
     case "1":
@@ -199,12 +199,12 @@ if($style=="div"){
     break;
 
 
-    case "": // Handle file extension for files ending in '.'
-    case NULL: // Handle no file extension
+    case "":
+    case NULL:
     break;
-  } //slut switch
+  } //end switch
 }//end elseif
-} //slut getNot
+} //end getNot
 
 
  ?>
