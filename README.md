@@ -1,4 +1,4 @@
-# StupidHarpTab
+# StupidHarpTab V.1
 
 Just a stupid (i.e not sane, beautiful or efficient) parser for simple tab files using a sligthly alterd tab format.
 
@@ -23,10 +23,15 @@ Do not trust the code, if you are not capable of understanding the code you are 
 
 ## Usage
 
-StupidHarpTab(FILE, STYLE);
+* Include or require StupidHarpTab.php
+* Link StupidHarpTab.css
 
-FILE is the file with one or more tabs
-STYLE is "div" for a div/border based parsing and "unicode" to use unicode symbols.
+In your file of choice:
+
+StupidHarpTab(*FILE*, *STYLE*);
+
+*FILE* is the file with one or more tabs
+*STYLE* is **"div"** for a div/border based parsing and **"unicode"** to use unicode symbols.
 
 
 ## Tab/file syntax

@@ -1,6 +1,7 @@
 <?php
 
 //======================================================================
+// StupidHarpTab V.1
 // Made by Uhtoom
 // https://github.com/uhtoom/StupidHarpTab
 // Released under GNU General Public License v3.0
