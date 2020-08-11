@@ -1,3 +1,16 @@
+/*
+//======================================================================
+// Made by Uhtoom
+// https://github.com/uhtoom/StupidHarpTab
+// Released under GNU General Public License v3.0
+//======================================================================
+*/
+
+/*
+This file should be self-explanatory.
+The classes named after note length is the most important once - if "div" style is used.
+*/
+
 .title {
   float:left;
   clear: both;
