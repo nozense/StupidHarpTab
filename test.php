@@ -1,6 +1,6 @@
-
-
 <?php
+// StupidHarpTab V.1
+
 include 'StupidHarpTab.php'; //include the function file
  ?>
 

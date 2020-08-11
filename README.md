@@ -1,4 +1,4 @@
-# StupidHarpTab
+# StupidHarpTab V.1
 
 Just a stupid (i.e not sane, beautiful or efficient) parser for simple tab files using a sligthly alterd tab format.
 
