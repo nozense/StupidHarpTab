@@ -5,7 +5,7 @@ include 'StupidHarpTab.php'; //include the function file
  ?>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="StupidHarpTab.css"> // include the CSS
+  <link rel="stylesheet" type="text/css" href="StupidHarpTab.css"> <!--include the CSS -->
 </head>
 <body>
 
