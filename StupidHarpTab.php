@@ -17,6 +17,7 @@ function StupidHarpTab($file, $style){ // Main function, gets the file, spits it
             $line = substr($line, 1);
             echo "<div class='title'>" . $line . "</div>"; //Set class and echos Title
           }elseif(substr( $line, 0, 1 ) == "~"){
+              $line = substr($line, 1);
               echo "<div class='lyrics'>" . $line . "</div>"; //Set class and echos Lyrics
           }else{
           $lineArr = explode(" ", trim($line)); // explode the line at blank space and trim trailing \n added by fgets
