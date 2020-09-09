@@ -46,7 +46,7 @@ function genTab(array $score){
      foreach ($singleChar as $char) { // go through every single character
           if($char == "*"){$mark == "red";}
           if($char == "(" || $char == ")"){echo $char;} //write out parantheses
-          if(is_numeric($char)){echo "<span class='" . $mark . "'>" . $char . "</span>";} //write out number
+          if(is_numeric($char)){echo "<span class='test' class='" . $mark . "'>" . $char . "</span>";} //write out number
           if($char == "r" || $char == "R"){echo "&nbsp;";} //echo empty for rests
           if($char == "d" || $char == "D"){echo "&nbsp;";} //echo empty for repeat
         } //end foreach $singleNot
