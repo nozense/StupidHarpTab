@@ -30,7 +30,7 @@ function StupidHarpTab($file, $style){ // Main function, gets the file, spits it
 
 function parseTab(array $score, $style){ //function to get everything in right order and echo som divs
   echo "<div class='rad'>";
-  $scoreClean = str_replace("*","",$score);
+  $scoreClean = str_replace("`","",$score);
   genScore($scoreClean, $style); // get the score
   echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>"; // echo seperation between score and tab
   genTab($score); // get the tabs
@@ -45,7 +45,7 @@ function genTab(array $score){
         echo "<div class='tab'>";
         $mark = "";
      foreach ($singleChar as $char) { // go through every single character
-          if($char == "*"){$mark = "red";}
+          if($char == "`"){$mark = "red";}
           if($char == "(" || $char == ")"){echo $char;} //write out parantheses
           if(is_numeric($char)){echo "<span class=' " . $mark . "'>" . $char . "</span>";} //write out number
           if($char == "r" || $char == "R"){echo "&nbsp;";} //echo empty for rests
