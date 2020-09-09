@@ -38,12 +38,14 @@ function parseTab(array $score, $style){ //function to get everything in right o
 
 
 function genTab(array $score){
+  $mark = "";
   foreach ($score as $singleNot) { // go through expressions
     $singleChar = str_split($singleNot);  // split a single expression in to characters
         echo "<div class='tab'>";
      foreach ($singleChar as $char) { // go through every single character
+          if($char == "*"){$mark == "red";}
           if($char == "(" || $char == ")"){echo $char;} //write out parantheses
-          if(is_numeric($char)){echo $char;} //write out number
+          if(is_numeric($char)){echo "<span class='" . $mark . "'>" . $char . "</span>";} //write out number
           if($char == "r" || $char == "R"){echo "&nbsp;";} //echo empty for rests
           if($char == "d" || $char == "D"){echo "&nbsp;";} //echo empty for repeat
         } //end foreach $singleNot

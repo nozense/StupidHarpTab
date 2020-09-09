@@ -10,7 +10,7 @@ Parsed with php and css to make it easy, lightweight and customizable.
 
 ## Disclaimer
 
-I know very little code, i'm not in any way capable of writing this code.
+I know very little code, i'm not in any way capable of writing this code in a safe and effective way.
 I made it for my self and leave it here for those who migth want to use it or alter it to something better.
 Do not trust the code, if you are not capable of understanding the code you are adviced not to use it.
 
@@ -50,6 +50,7 @@ Quater note Rest (upper case R) | R
 Repeat - Start (upper case D) | D
 Repeat - End (lower case d) | d
 Header/Title (# as first char) | # Title
+Lyrics (~ as first char) | ~ Lyrics
 
 
 ## Files
