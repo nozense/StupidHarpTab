@@ -30,7 +30,8 @@ function StupidHarpTab($file, $style){ // Main function, gets the file, spits it
 
 function parseTab(array $score, $style){ //function to get everything in right order and echo som divs
   echo "<div class='rad'>";
-  genScore($score, $style); // get the score
+  $scoreClean = str_replace("*","",$score);
+  genScore($scoreClean, $style); // get the score
   echo  "<div class='mellan' style='width:100%; height:1px; clear:both;'></div>"; // echo seperation between score and tab
   genTab($score); // get the tabs
   echo "</div>";
