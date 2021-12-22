@@ -16,6 +16,10 @@ The classes named after note length is the most important once - if "div" style 
   color: #F00;
 }
 
+.blue {
+  color: #00F;
+}
+
 .title {
   float:left;
   clear: both;
