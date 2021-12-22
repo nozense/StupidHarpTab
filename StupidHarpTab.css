@@ -19,11 +19,11 @@ The classes named after note length is the most important once - if "div" style 
 }
 
 .fBend::before {
- content: "^^";
+ content: "\21C8";
 }
 
 .hBend::before {
- content: "^";
+ content: "\2191";
 }
 
 .title {
