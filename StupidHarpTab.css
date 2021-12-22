@@ -12,12 +12,18 @@ This file should be self-explanatory.
 The classes named after note length is the most important once - if "div" style is used.
 */
 
-.red {
-  color: #F00;
+.fBend {
 }
 
-.blue {
-  color: #00F;
+.hBend {
+}
+
+.fBend::before {
+ content: "^^";
+}
+
+.hBend::before {
+ content: "^";
 }
 
 .title {
